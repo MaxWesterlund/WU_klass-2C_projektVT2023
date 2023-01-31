@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    z-index: 1;
+    margin: 0px;
+}
+
+#main_header {
+    background-color: rgb(132, 216, 191);
+    height: 60px;
+}
+
+#link_list {
+    background-color: rgb(132, 216, 191);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.link_list_visible {
+    
+}
+
+#burger_menu {
+    align-self: end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+#burger_menu div {
+    background-color: white;
+    margin-bottom: 5px;
+    height: 6px;
+}
+
+#burger_line_1 {
+    width: 400px;
+}
+#burger_line_2 {
+    width: 300px;
+}
