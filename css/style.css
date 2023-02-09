@@ -4,27 +4,71 @@
     margin: 0px;
 }
 
+body {
+    background-color: rgb(126, 130, 148);
+}
+
+#start_grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "he he"
+        "li li"
+        "re re";
+}
+
 #main_header {
-    background-color: rgb(132, 216, 191);
+    grid-area: he;
+    z-index: 1;
     height: 60px;
+    background-color: rgb(29, 30, 36);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+#main_header h1 {
+    color: white;
 }
 
 #link_list {
-    background-color: rgb(132, 216, 191);
+    grid-area: li;
+    z-index: -1;
+    background-color:rgb(29, 30, 36);
     height: 70px;
+    width: 100%;
+    position: absolute;
+    top: 12px;
     display: flex;
-    justify-content: center;
-
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    transition: 0.5s;
 }
 
 .link_list_visible {
-    
+    transform: translateY(48px);
+}
+
+#links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+#links li {
+    margin: 10px;
+}
+#links a {
+    position: relative;
+    left: -20px;
+    margin: 20px;
+    text-decoration: none;
+    color: white;
 }
 
 #burger_menu {
-    align-self: end;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     flex-direction: column;
     cursor: pointer;
@@ -40,4 +84,62 @@
 }
 #burger_line_2 {
     width: 300px;
+}
+
+@media screen and (max-width: 600px) {
+    #header_burger_menu {
+        display: block;
+        cursor: pointer;
+        margin-left: auto;
+    }
+    #header_burger_menu div {
+        background-color: white;
+        width: 40px;
+        height: 6px;
+        margin: 10px;
+    }
+
+    #start_grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+            "he he"
+            ".  li";
+    }
+
+    #link_list {
+        height: 500px;
+        width: 50%;
+        top: 60px;
+        right: 0px;
+        align-items: end;
+        justify-content: center;
+    }
+    
+    .link_list_visible {
+        transform: translateY(-500px);
+    }
+    
+    #links {
+        height: 100%;
+        flex-direction: column;
+        align-items: end;
+        justify-content: space-around;
+    }
+    #links li {
+    }
+    #links a {
+        margin: 0px;
+    }
+    
+    #burger_menu {
+        display: none;
+    }
+    
+    #burger_line_1 {
+        width: 100px;
+    }
+    #burger_line_2 {
+        width: 100px;
+    }
 }
