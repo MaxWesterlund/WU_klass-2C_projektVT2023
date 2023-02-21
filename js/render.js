@@ -1,4 +1,4 @@
-let app = new PIXI.Application({ width: 640, height: 360 });
+let app = new PIXI.Application({ width: 400, height: 400 });
 document.body.appendChild(app.view);
 
 let sprite = PIXI.Sprite.from(PIXI.Texture.WHITE);
@@ -6,10 +6,10 @@ sprite.width = 50;
 sprite.height = 50;
 app.stage.addChild(sprite);
 
-var buffer = 2;
+var buffer = 1;
 
-var spritePosX = 200;
-var spritePosY = 140;
+var spritePosX = 0;
+var spritePosY = 0;
 
 var directionX = 1;
 var directionY = 1;
@@ -19,10 +19,10 @@ app.ticker.add((delta) => {
 
     elapsed += delta;
 
-    spritePosX += Math.cos(45) * directionX * buffer * delta;
-    spritePosY += Math.sin(45) * directionY * buffer * delta;
+    spritePosX += 2 * directionX * buffer * delta;
+    spritePosY += 1.5 * directionY * buffer * delta;
 
-    if (spritePosY + 50 > 360) {
+    if (spritePosY + 50 > app.view.height) {
         directionY = -1;
     }
     else if (spritePosY < 0)
@@ -30,7 +30,7 @@ app.ticker.add((delta) => {
         directionY = 1;
     }
 
-    if (spritePosX + 50 > 640) {
+    if (spritePosX + 50 > app.view.width) {
         directionX = -1;
     }
     else if (spritePosX < 0)
