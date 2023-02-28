@@ -10,7 +10,6 @@ h1 {
 #start_grid {
     grid-template-areas: 
         "he he"
-        "li li"
         "ti ti";
 }
 
@@ -19,7 +18,6 @@ h1 {
     z-index: 1;
     height: 60px;
     width: 100%;
-    position: fixed;
     background-color: rgb(24, 25, 27);
     display: flex;
     justify-content: start;
@@ -35,8 +33,8 @@ h1 {
     background-color: rgb(24, 25, 27);  
     height: 70px;
     width: 100%;
-    position: fixed;
     top: 12px;
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,6 +64,7 @@ h1 {
 }
 
 #burger_menu {
+    z-index: 1;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -86,8 +85,58 @@ h1 {
 }
 
 #main_title {
-    grid-area: ti;
-    background-color: blue;
+    margin-top: 40px;
+    z-index: -1;
+}
+
+
+#game_list {
+    display: grid;
+    grid-template-columns: minmax(200px, 400px) minMax(200px, 400px);
+    grid-template-rows: 500px 500px;
+    grid-template-areas: 
+    "g1 g2"
+    "g3 g4";
+    justify-content: center;
+}
+
+#game_list div {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+#game_1 {
+    grid-area: g1;
+    background-color: rgb(219, 197, 99);
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+#game_2 {
+    grid-area: g2;  
+    background-color: rgb(90, 90, 214);
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+#game_3 {
+    grid-area: g3;
+    background-color: rgb(209, 106, 106);
+    margin-right: 20px;
+    margin-top: 20px;
+}
+#game_4 {
+    grid-area: g4;
+    background-color: rgb(93, 153, 96);
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.game_gradient {
+    height: 250px;
+    width: 100%;
+    justify-self: end;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
 }
 
 @media screen and (max-width: 600px) {
@@ -104,8 +153,6 @@ h1 {
     }
 
     #start_grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
         grid-template-areas: 
             "he he"
             ".  li";
