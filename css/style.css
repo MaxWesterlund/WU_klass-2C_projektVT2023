@@ -3,47 +3,38 @@
     margin: 0px;
 }
 
-h1 {
-    color: gray;
+body {
+    background-color: rgb(69, 73, 82);
 }
 
-#start_grid {
+#header {
+    display: grid;
+    grid-template-columns: 5% 95%;
     grid-template-areas: 
-        "he he"
-        "ti ti";
+    "he li";
+    align-items: start;
 }
 
-#main_header {
+header {
     grid-area: he;
-    z-index: 1;
     height: 60px;
-    width: 100%;
-    background-color: rgb(24, 25, 27);
     display: flex;
     justify-content: start;
     align-items: center;
+    background-color: rgb(24, 25, 27);
 }
-#main_header h2 {
+header h2 {
     color: white;
 }
 
 #link_list {
-    grid-area: li;
-    z-index: -1;
-    background-color: rgb(24, 25, 27);  
-    height: 70px;
-    width: 100%;
-    top: 12px;
-    position: fixed;
+    grid-area: li; 
+    height: 60px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    transition: 0.1s;
-}
-
-.link_list_visible {
-    transform: translateY(30px);
+    justify-content: center;
+    align-items: start;
+    background-color: rgb(24, 25, 27); 
 }
 
 #links {
@@ -63,36 +54,33 @@ h1 {
     color: white;
 }
 
-#burger_menu {
-    z-index: 1;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    flex-direction: column;
-    cursor: pointer;
+#start_background {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
 }
-#burger_menu div {
-    background-color: white;
-    margin-bottom: 5px;
-    height: 3px;
+#start_title {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
 }
-
-#burger_line_1 {
-    width: 300px;
+#start_title h1 {
+    color: white;
 }
-#burger_line_2 {
-    width: 250px;
+#start_title h2 {
+    color: white;
 }
 
-#main_title {
-    margin-top: 40px;
-    z-index: -1;
+#filler {
+    width: 100%;
+    height: 1000px;
 }
-
 
 #game_list {
+    grid-area: ga;
     display: grid;
-    grid-template-columns: minmax(200px, 400px) minMax(200px, 400px);
+    grid-template-columns: 500px 500px;
     grid-template-rows: 500px 500px;
     grid-template-areas: 
     "g1 g2"
@@ -100,11 +88,18 @@ h1 {
     justify-content: center;
 }
 
-#game_list div {
+#game_list a {
     display: flex;
     flex-direction: column;
     justify-content: end;
-    align-items: center;
+    align-items: start;
+    padding: 20px;
+    text-decoration: none;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
+    color: white;
+}
+#game_list a:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
 }
 
 #game_1 {
@@ -132,63 +127,66 @@ h1 {
     margin-top: 20px;
 }
 
-.game_gradient {
-    height: 250px;
-    width: 100%;
-    justify-self: end;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
-}
-
 @media screen and (max-width: 600px) {
-    #header_burger_menu {
-        display: block;
-        cursor: pointer;
-        margin-left: auto;
+    #start_grid {
+        grid-template-areas: none;
     }
-    #header_burger_menu div {
-        background-color: white;
+    header {
+        display: none;
+    }
+    #burger_menu {
+        display: block;
+        position: fixed;
+        left: 80vw;
+        top: 2vh;
+        cursor: pointer;
+    }
+    #burger_menu div {
+        background-color: rgb(255, 255, 255);
         width: 40px;
-        height: 6px;
+        height: 10px;
         margin: 10px;
     }
 
-    #start_grid {
-        grid-template-areas: 
-            "he he"
-            ".  li";
+    #link_list {
+        position: static;
+        top: 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        transition: 0.2s;
     }
 
-    #link_list {
-        height: 500px;
-        width: 50%;
-        top: 60px;
-        right: 0px;
-        align-items: end;
-        justify-content: center;
-    }
-    
     .link_list_visible {
-        transform: translateY(-500px);
+        transform: translateY(-100vh);
     }
     
-    #links {
-        height: 100%;
+    #link_list ul {
         flex-direction: column;
-        align-items: end;
-        justify-content: space-around;
+        align-items: center;
     }
-    #links a {
+
+    #link_list ul li {
+        margin-top: 50px;
+        display: initial;
+        color: rgb(255, 255, 255);   
+    }
+
+    #game_list {
+        grid-template-columns: 100%;
+        grid-template-rows: 500px 500px 500px 500px;
+        grid-template-areas: 
+        "g1"
+        "g2"
+        "g3"
+        "g4";
+    }
+    #game_list a {
         margin: 0px;
-    }
-    
-    #burger_menu {
-        display: none;
-    }
-    
-    #burger_line_1 {
-        width: 100px;
-    }
-    #burger_line_2 {
-        width: 100px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
