@@ -1,38 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0px;
 }
 
 body {
-    background-color: rgb(69, 73, 82);
+    background-color: rgb(24, 25, 27);
+}
+
+h1 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 3rem;
+    color: white;
+}
+
+h2 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 2rem;
+    color: white;
+}
+a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.2rem;
+    color: white;
 }
 
 #header {
     display: grid;
-    grid-template-columns: 5% 95%;
+    grid-template-columns: max-content max-content 100px;
     grid-template-areas: 
     "he li";
     align-items: start;
+    justify-content: start;
 }
 
-header {
+#header header {
     grid-area: he;
+    width: fit-content;
     height: 60px;
     display: flex;
     justify-content: start;
     align-items: center;
     background-color: rgb(24, 25, 27);
 }
-header h2 {
-    color: white;
+
+#header header div {
+    width: 4px;
+    height: 40px;
+    margin-left: 44px;
+    border-radius: 1px;
+    background-color: white;
 }
 
 #link_list {
     grid-area: li; 
+    width: 100%;
     height: 60px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: start;
     background-color: rgb(24, 25, 27); 
 }
@@ -51,7 +78,6 @@ header h2 {
     left: -20px;
     margin: 20px;
     text-decoration: none;
-    color: white;
 }
 
 #start_background {
@@ -65,16 +91,16 @@ header h2 {
     left: 50%;
     transform: translate(-50%, -25%);
 }
-#start_title h1 {
-    color: white;
-}
 #start_title h2 {
-    color: white;
+    font-style: italic;
 }
 
 #filler {
+    position: absolute;
+    top: 100vh;
     width: 100%;
     height: 1000px;
+    background-color: rgb(24, 25, 27);
 }
 
 #game_list {
@@ -84,57 +110,49 @@ header h2 {
     grid-template-rows: 500px 500px;
     grid-template-areas: 
     "g1 g2"
-    "g3 g4";
+    "g3 . ";
     justify-content: center;
 }
 
 #game_list a {
+    margin: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: start;
-    padding: 20px;
     text-decoration: none;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
-    color: white;
-}
-#game_list a:hover {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
 }
 
 #game_1 {
     grid-area: g1;
-    background-color: rgb(219, 197, 99);
-    margin-right: 20px;
-    margin-bottom: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), url("/img/othello_1.png");;
+}
+#game_1:hover {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)), url("/img/othello_1.png");;
 }
 #game_2 {
-    grid-area: g2;  
-    background-color: rgb(90, 90, 214);
-    margin-left: 20px;
-    margin-bottom: 20px;
+    grid-area: g2;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), url("/img/terrain_game_1.png");;
+}
+#game_2:hover {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)), url("/img/terrain_game_1.png");;
 }
 #game_3 {
     grid-area: g3;
     background-color: rgb(209, 106, 106);
-    margin-right: 20px;
-    margin-top: 20px;
-}
-#game_4 {
-    grid-area: g4;
-    background-color: rgb(93, 153, 96);
-    margin-left: 20px;
-    margin-top: 20px;
 }
 
 @media screen and (max-width: 600px) {
-    #start_grid {
+    #hedader {
         grid-template-areas: none;
     }
+
     header {
         display: none;
     }
     #burger_menu {
+        z-index: 1;
         display: block;
         position: fixed;
         left: 80vw;
@@ -149,11 +167,12 @@ header h2 {
     }
 
     #link_list {
-        position: static;
+        z-index: 1;
+        position: fixed;
         top: 0px;
         display: flex;
         flex-direction: row;
-        align-items: start;
+        align-items: center;
         justify-content: center;
         height: 100vh;
         width: 100vw;
@@ -170,7 +189,7 @@ header h2 {
     }
 
     #link_list ul li {
-        margin-top: 50px;
+        margin-top: 10vh;
         display: initial;
         color: rgb(255, 255, 255);   
     }
@@ -181,8 +200,7 @@ header h2 {
         grid-template-areas: 
         "g1"
         "g2"
-        "g3"
-        "g4";
+        "g3";
     }
     #game_list a {
         margin: 0px;

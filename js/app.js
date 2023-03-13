@@ -8,9 +8,10 @@ function toggleLinks() {
 window.onscroll = function scroll() {
     var blur_buffer = .05;
     var scroll_dist = window.pageYOffset;
-    scroll_dist = Math.min(scroll_dist, 200)
+    scroll_dist = Math.min(scroll_dist, 1000)
 
     console.log(scroll_dist);
 
-    document.getElementById("start_background").style.filter = "blur(" + scroll_dist * blur_buffer + "px)";;
+    var background = document.getElementById("start_background");
+    background.style.filter = "blur(" + scroll_dist * blur_buffer + "px)";
 }
