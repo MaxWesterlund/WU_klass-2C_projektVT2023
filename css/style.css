@@ -295,6 +295,44 @@ p {
     text-decoration: underline;
 }
 
+#contact_grid {
+    display: grid;
+    grid-template-columns: 40vw;
+    grid-template-areas: 
+    "i1";
+    justify-content: center;
+}
+#contact_item_1 {
+    grid-area: i1;
+
+    margin-top: 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "ti im"
+    "pa im";
+    align-items: center;
+}
+#contact_item_1 h1 {
+    grid-area: ti;
+    margin-right: 10px;
+    text-align: end;
+}
+#contact_item_1 p {
+    grid-area: pa;
+    margin-right: 10px;
+    text-align: end;
+}
+#contact_item_1 p a {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    font-style: italic;
+}
+#contact_item_1 img {
+    grid-area: im;
+}
+
 @media screen and (max-width: 600px) {
     a {
         font-size: 1.5rem;
@@ -475,5 +513,35 @@ p {
     #game_paragraph_2 {
         text-align: center;
         margin: 20px;
+    }
+
+    #contact_grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "i1";
+        justify-content: center;
+    }
+    #contact_item_1 {
+        grid-area: i1;
+    
+        margin: 40px;
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "im"
+        "ti"
+        "pa";
+        align-items: start;
+    }
+    #contact_item_1 h1 {
+        text-align: start;
+    }
+    #contact_item_1 p {
+        text-align: start;
+    }
+    #contact_item_1 img {
+        
     }
 }
