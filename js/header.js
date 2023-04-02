@@ -1,3 +1,4 @@
+// Initial window check
 if (window.innerWidth < 600) {
     othello = document.getElementById("othello");
     if (othello != null) {
@@ -32,17 +33,6 @@ function toggleGames(a) {
         document.getElementById("othello").classList.toggle("sublink");
         document.getElementById("terrain").classList.toggle("hide");
         document.getElementById("terrain").classList.toggle("sublink");
-    }
-}
-
-window.onscroll = function blur() {
-    var blur_buffer = .05;
-    var scroll_dist = window.pageYOffset;
-    scroll_dist = Math.min(scroll_dist, 1000);
-
-    var background = document.getElementById("start_background");
-    if (background != null) {
-        background.style.filter = "blur(" + scroll_dist * blur_buffer + "px)";
     }
 }
 
