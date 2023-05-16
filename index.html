@@ -9,25 +9,20 @@
 </head>
 <body>
     <div id="header">
-        <header>
-            <h2>Start</h2>
-            <div></div>
-        </header>
+        <img id="header_logo", src="img/unity_logo.png">
         <nav id="link_list" class="link_list_closed">
-            <ul id="links">
-                <li>
-                    <a id="games" class="header_link" href="games.html">
-                        Games
-                        <a id="othello" class="hide" href="othello.html"><p>Othello</p></a>
-                        <a id="terrain" class="hide" href="terrain.html"><p>Terrain</p></a>
-                    </a>
-                </li>
-                <li><a id="contact" class="header_link" href="contact.html">Contact</a></li>
-            </ul>
+            <a id="start" class="header_link" href="index.html"><h3>Start</h3></a>
+            <a id="games" class="header_link" href="games.html"><h3>Games</h3></a>
+            <a id="contact" class="header_link" href="contact.html"><h3>Contact</h3></a>
         </nav>
     </div>
 
-    <img id="start_background" src="img/terrain.jpeg" alt="image of obscure topology">
+    <div id="burger_menu">
+        <div id="burger_line_1"></div>
+        <div id="burger_line_2"></div>
+    </div>
+
+    <canvas id="start_background_canvas"></canvas>
      
     <div id="start_title">
         <h1>Max Westerlund</h1>
@@ -68,12 +63,7 @@ Overall, the combination of Visual Studio Code and GitHub provides me with a pow
         </div>
     </div>
 
-    <div id="burger_menu">
-        <div id="burger_line_1"></div>
-        <div id="burger_line_2"></div>
-    </div>
-
     <script src="js/header.js"></script>
-    <script src="js/start.js"></script>
+    <script src="js/start_canvas.js"></script>
 </body>
 </html>
