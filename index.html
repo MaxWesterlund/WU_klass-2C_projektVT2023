@@ -8,13 +8,38 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="header">
-        <img id="header_logo", src="img/unity_logo.png">
-        <nav id="link_list" class="link_list_closed">
-            <a id="start" class="header_link" href="index.html"><h3>Start</h3></a>
-            <a id="games" class="header_link" href="games.html"><h3>Games</h3></a>
-            <a id="contact" class="header_link" href="contact.html"><h3>Contact</h3></a>
-        </nav>
+    <div id="start_grid">
+        <div id="header">
+            <img id="header_logo", src="img/unity_logo.png">
+            <nav id="link_list" class="link_list_closed">
+                <a id="start" class="header_link" href="index.html"><h3>Start</h3></a>
+                <a id="games" class="header_link" href="games.html"><h3>Games</h3></a>
+                <a id="contact" class="header_link" href="contact.html"><h3>Contact</h3></a>
+            </nav>
+        </div>
+            
+        <div id="start_title">
+            <h1>Max Westerlund</h1>
+            <h2>Game Dev</h2>
+        </div> 
+
+        <div id="start_text">
+            <h1>Titel</h1>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque ipsum laboriosam minima at animi ex ducimus et necessitatibus cum, quidem quia commodi suscipit doloremque, mollitia alias ab harum provident quod dolores exercitationem deleniti. Magni sint provident ex totam accusantium ratione possimus, optio commodi consequuntur quae iusto molestiae dicta id esse culpa, illum tempore nemo? Ipsa, accusamus repellendus temporibus neque repudiandae tempore porro? Officia, consectetur delectus quae, rem ex culpa nam consequuntur iste ipsum laboriosam vitae a ducimus perferendis beatae sint eveniet eligendi hic suscipit enim quidem possimus tempora nemo! Odit obcaecati dolores dolor, unde ad alias praesentium molestias expedita pariatur.
+            </p>
+        </div>
+
+        <div id="color_picker">
+            <div id="dracula_theme" class="color_theme_button">
+                <div id="dracula_1"></div>
+                <div id="dracula_2" style="transform: rotate(180deg)"></div>
+            </div>
+            <div id="palenight_theme" class="color_theme_button">
+                <div id="palenight_1"></div>
+                <div id="palenight_2" style="transform: rotate(180deg);"></div>
+            </div>
+        </div> 
     </div>
 
     <div id="burger_menu">
@@ -23,13 +48,9 @@
     </div>
 
     <canvas id="start_background_canvas"></canvas>
-     
-    <div id="start_title">
-        <h1>Max Westerlund</h1>
-        <h2>Game Dev</h2>
-    </div> 
     
     <script src="js/header.js"></script>
     <script src="js/start_canvas.js"></script>
+    <script src="js/color_picker.js"></script>
 </body>
 </html>

@@ -3,24 +3,23 @@ var canvas = document.getElementById("start_background_canvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-var lineWidth = 2;
-var minRadius = 250;
-var maxRadius = 300;
-
 var minSpeed = .1;
 var maxSpeed = .3;
 
-var circleAmount = 7;
+var circleAmount = 3;
 
 const circles = [];
 
-intitCircles();
+initCircles();
 loop();
 
-function intitCircles() {
+function initCircles() {
+    var minRadius = 50 * (window.innerWidth / 1920);
+    var maxRadius = 300 * (window.innerWidth / 1920);
     for (let i = 0; i < circleAmount; i++) {
+        var f = window.innerWidth / 1920;
         circles[i] = {
-            "xPos": getRandomInt(maxRadius, canvas.width - maxRadius),
+            "xPos": getRandomInt(maxRadius * f, canvas.width - maxRadius),
             "yPos": getRandomInt(maxRadius, canvas.height - maxRadius),
             "radius": getRandomInt(minRadius, maxRadius),
             "xDir": Math.random() * (Math.random() > .5 ? 1 : -1),
@@ -47,7 +46,8 @@ function draw(circle) {
     ctx.beginPath();
     ctx.arc(circle.xPos, circle.yPos, circle.radius, 0, 2 * Math.PI, false);
     
-    ctx.fillStyle = "rgba(189, 147, 249, .2)";
+    var root = document.querySelector(":root");
+    ctx.fillStyle = root.style.getPropertyValue("--accent-color-1-transparent");
     ctx.fill();
 }
 
@@ -69,4 +69,12 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
+}
+
+window.addEventListener("resize", resize);
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initCircles();
 }
