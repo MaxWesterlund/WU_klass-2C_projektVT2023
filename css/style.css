@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
+/* #region Overall */
 :root {
     --main-color:rgb(0, 0, 0);
     --main-color-transparent:rgba(0, 0, 0, 0);
-    --background-color:rgb(0, 0, 0)
+    --background-color:rgb(0, 0, 0);
     --text-color-1:rgb(0, 0, 0);
     --text-highlight-color-1:rgb(0, 0, 0);
     --accent-color-1:rgb(0, 0, 0);
@@ -17,8 +18,8 @@
 
 body {
     background-color: var(--background-color);
-    overflow-x: hidden;
 }
+/* #endregion */
 
 /* #region Text Styling */
 h1 {
@@ -94,15 +95,14 @@ a h3:hover {
 
 #start_grid {
     height: 100vh;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: min-content min-content 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-template-areas: 
     "he he"
     "ti te"
-    ".  co";
-
-    align-content: stretch;
+    ".  th";
 }
 
 #start_title {
@@ -135,8 +135,8 @@ a h3:hover {
     text-align: end;
 }
 
-#color_picker {
-    grid-area: co;
+#theme_picker {
+    grid-area: th;
 
     margin: 30px;
     margin-right: 90px;
@@ -156,6 +156,12 @@ a h3:hover {
 
     transform: rotate(-45deg);
 }
+.color_theme_button:hover {
+    border-color: var(--text-color-1);
+}
+.color_theme_button:active {
+    border-color: var(--text-color-1);
+}
 
 .color_theme_button div {
     height: 30px;
@@ -163,7 +169,6 @@ a h3:hover {
 
     border-radius: 45px 45px 0 0;
 }
-
 
 #game_list {
     grid-area: ga;
@@ -368,31 +373,36 @@ a h3:hover {
     }
 
     #start_grid {
-        width: 100vw;
-        grid-template-rows: auto auto auto;
+        height: fit-content;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
         grid-template-areas: 
         "ti"
         "te"
-        "co";
-        justify-content: center;
+        "th";
+        justify-content: start;
+        align-items: center;
     }
 
     #start_title {
         margin: 0px;
-        left: 50%;
-        transform: translate(-50%, -25%);
     }
 
     #start_text {
+        width: 80vw;
+
+        justify-self: center;
         margin: 0px;
 
-        width: 100vw;
         text-align: center;
 
-        align-items: center;
+        justify-content: start;
     }
 
-    #color_picker {
+    #theme_picker {
+        justify-self: center;
+        
         margin: 0px;
     }
 

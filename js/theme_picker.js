@@ -1,13 +1,12 @@
-
 const dracula = {
     "name":"dracula",
     "main":"rgb(40, 42, 54)",
     "mainTransparent":"rgba(40, 42, 54, .8)",
     "background":"rgb(68, 71, 90)",
     "text1":"rgb(248, 248, 242)",
-    "textHighLight1":"rgb(154, 252, 179)",
-    "accent1":"rgb(189, 147, 249)",
-    "accent1Transparent":"rgba(189, 147, 249, .2)"
+    "textHighLight1":"rgb(189, 147, 249)",
+    "accent1":"rgb(154, 252, 179)",
+    "accent1Transparent":"rgba(154, 252, 179, .2)"
 }
 
 const palenight = {
@@ -16,9 +15,9 @@ const palenight = {
     "mainTransparent":"rgba(54, 60, 80, .8)",
     "background":"rgb(86, 85, 122)",
     "text1":"rgb(255, 255, 255)",
-    "textHighLight1":"rgb(255, 212, 126)",
-    "accent1":"rgb(233, 128, 131)",
-    "accent1Transparent":"rgba(233, 128, 131, .2)"
+    "textHighLight1":"rgb(233, 128, 131)",
+    "accent1":"rgb(255, 212, 126)",
+    "accent1Transparent":"rgba(255, 212, 126, .2)"
 }
 
 initTheme(dracula);
@@ -31,12 +30,6 @@ function initTheme(theme) {
     var themeObj = document.getElementById(theme.name + "_theme");
     themeObj.addEventListener("click", function() {
         switchTheme(theme);
-    });
-    themeObj.addEventListener("mouseover", function() {
-        themeObj.style.borderColor = theme.text1;
-    });
-    themeObj.addEventListener("mouseleave", function(){
-        themeObj.style.borderColor = themeObj.style.getPropertyValue("--main-color");
     });
 }
 
