@@ -373,37 +373,47 @@ a h3:hover {
     }
 
     #start_grid {
-        height: fit-content;
+        height: auto;
+        width: 100vw;
 
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto 1fr;
+        grid-template-rows: auto 1fr;
         grid-template-areas: 
-        "ti"
         "te"
         "th";
-        justify-content: start;
+        justify-items: center;
         align-items: center;
     }
 
     #start_title {
-        margin: 0px;
+        display: none;
     }
 
     #start_text {
-        width: 80vw;
-
-        justify-self: center;
+        justify-self: auto;
         margin: 0px;
+        margin-top: 30px;
+
+        width: 100vw;
+        height: auto;
 
         text-align: center;
 
-        justify-content: start;
+        justify-content: center;
+        align-items: center;
+    }
+    #start_text p {
+        margin: 10px;
     }
 
     #theme_picker {
-        justify-self: center;
-        
+        justify-self: auto;
         margin: 0px;
+
+        width: auto;
+        height: auto;
+
+        justify-content: space-evenly;
     }
 
     #game_list {
