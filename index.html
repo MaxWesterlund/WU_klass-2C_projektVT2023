@@ -10,12 +10,12 @@
 <body>
     <div id="start_grid">
         <div id="header">
-            <img id="header_logo", src="img/unity_logo.png">
             <nav id="link_list" class="link_list_closed">
-                <a id="start" class="header_link" href="index.html"><h3>Start</h3></a>
-                <a id="games" class="header_link" href="games.html"><h3>Games</h3></a>
                 <a id="contact" class="header_link" href="contact.html"><h3>Contact</h3></a>
+                <a id="games" class="header_link" href="games.html"><h3>Games</h3></a>
+                <a id="start" class="header_link" href="index.html"><h3>Start</h3></a>
             </nav>
+            <img id="header_logo", src="img/unity_logo.png">
         </div>
             
         <div id="start_title">
@@ -42,14 +42,14 @@
         </div> 
     </div>
 
-    <div id="burger_menu">
-        <div id="burger_line_1"></div>
-        <div id="burger_line_2"></div>
+    <div id="burger_menu" class="burger_menu_inactive">
+        <div></div>
+        <div></div>
     </div>
 
     <canvas id="start_background_canvas"></canvas>
     
-    <script src="js/header.js"></script>
+    <script src="js/burger_menu.js"></script>
     <script src="js/start_canvas.js"></script>
     <script src="js/theme_picker.js"></script>
 </body>

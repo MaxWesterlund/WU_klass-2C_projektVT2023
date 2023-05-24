@@ -20,8 +20,12 @@ const palenight = {
     "accent1Transparent":"rgba(255, 212, 126, .2)"
 }
 
-initTheme(dracula);
-initTheme(palenight);
+if (document.getElementById("dracula_1") != null) {
+    initTheme(dracula);
+    initTheme(palenight);
+}
+
+switchTheme(loadTheme());
 
 function initTheme(theme) {
     document.getElementById(theme.name + "_1").style.backgroundColor = theme.main;
@@ -33,8 +37,6 @@ function initTheme(theme) {
     });
 }
 
-switchTheme(dracula);
-
 function switchTheme(theme) {
     var root = document.querySelector(":root");
     root.style.setProperty("--main-color", theme.main);
@@ -44,4 +46,20 @@ function switchTheme(theme) {
     root.style.setProperty("--text-highlight-color-1", theme.textHighLight1);
     root.style.setProperty("--accent-color-1", theme.accent1);
     root.style.setProperty("--accent-color-1-transparent", theme.accent1Transparent);
+
+    saveTheme(theme);
+}
+
+function saveTheme(theme) {
+    sessionStorage.setItem("theme", JSON.stringify(theme));
+}
+
+function loadTheme() {
+    var theme = JSON.parse(sessionStorage.getItem("theme"));
+    if (theme != null) {
+        return theme;
+    }
+    else {
+        return dracula;
+    }
 }

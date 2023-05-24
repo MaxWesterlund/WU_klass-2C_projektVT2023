@@ -24,13 +24,13 @@ body {
 /* #region Text Styling */
 h1 {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: var(--text-color-1);
 }
 
 h2 {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--text-color-1);
 }
 h3 {
@@ -70,7 +70,9 @@ a h3:hover {
 }
 
 #header img {
-    margin: 10px;
+    margin: 20px;
+    margin-left: 0px;
+    margin-right: 38px;
 }
 
 #link_list {
@@ -85,6 +87,7 @@ a h3:hover {
 }
 /* #endregion */
 
+/* #region Start Page */
 #start_background_canvas {
     z-index: -1;
 
@@ -100,8 +103,8 @@ a h3:hover {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto 1fr;
     grid-template-areas: 
-    "he he"
-    "ti te"
+    "ti he"
+    ".  te"
     ".  th";
 }
 
@@ -169,45 +172,13 @@ a h3:hover {
 
     border-radius: 45px 45px 0 0;
 }
+/* #endregion */
 
-#game_list {
-    grid-area: ga;
+#games_grid {
     display: grid;
-    grid-template-columns: 500px 500px;
-    grid-template-rows: 500px auto;
-    grid-template-areas: 
-    "g1 g2"
-    "g3 . ";
-    justify-content: center;
-}
-
-#game_list a {
-    margin: 20px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: start;
-    text-decoration: none;
-}
-
-#game_1 {
-    grid-area: g1;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), url("/img/othello_1.png");;
-}
-#game_1:hover {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)), url("/img/othello_1.png");;
-}
-#game_2 {
-    grid-area: g2;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), url("/img/terrain_game_1.png");;
-}
-#game_2:hover {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)), url("/img/terrain_game_1.png");;
-}
-#game_3 {
-    grid-area: g3;
-    background-color: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "ti he";
 }
 
 #game_grid {
@@ -320,22 +291,48 @@ a h3:hover {
 
     #burger_menu {
         z-index: 1;
-
-        display: block;
         
         position: fixed;
-        left: 80vw;
+        left: 78vw;
         top: 2vh;
+
+        width: 50px;
+        height: 50px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
+        align-items: center;
 
         cursor: pointer;
     }
     #burger_menu div {
-        margin: 10px;
-        
-        width: 40px;
-        height: 10px;
+        grid-column: 1;
+        grid-row: 1;
+
+        width: 50px;
+        height: 12px;
 
         background-color: var(--text-color-1);
+        transition: 0.2s;
+    }
+    .burger_menu_inactive div:first-of-type {
+        margin-top: 0px;
+        margin-bottom: 24px;
+    }
+    .burger_menu_inactive div {
+        margin-top: 24px;
+        margin-bottom: 0px;
+        transform: rotateZ(0deg);
+    }
+    .burger_menu_active div:first-of-type {
+        margin: 0px;
+        transform: rotateZ(-315deg);
+    }
+    .burger_menu_active div {
+        margin: 0px;
+        transform: rotateZ(-405deg);
     }
 
     #link_list {
