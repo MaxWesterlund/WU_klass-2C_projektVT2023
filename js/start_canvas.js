@@ -6,7 +6,7 @@ canvas.height = document.body.scrollHeight;
 var minSpeed = .1;
 var maxSpeed = .3;
 
-var circleAmount = 3;
+var circleAmount = 7;
 
 const circles = [];
 
