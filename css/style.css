@@ -304,11 +304,32 @@ a h3:hover {
 }
 /* #endregion */
 
-.project_background {
+#project_background {
     z-index: -1;
     position: fixed;
 
     justify-self: center;
+
+    display: grid;
+    grid-template-areas: 
+    "ev";
+
+    justify-content: center;
+    align-items: center;
+}
+
+#project_background img {
+    grid-area: ev;
+}
+
+#project_background h1 {
+    grid-area: ev;
+
+    margin-top: 15%;
+
+    font-size: 5rem;
+
+    text-align: center;
 }
 
 #flyscape_grid {
@@ -324,7 +345,7 @@ a h3:hover {
 
     margin-top: 25vw;
 
-    width: 100vw;
+    width: 100%;
     height: 200vh;
 
     display: grid;
@@ -687,8 +708,15 @@ a h3:hover {
     }
     /* #endregion */
 
-    .project_background {
+    #project_background {
         height: 40vh;
+    }
+
+    #project_background h1 {
+        align-self: start;
+        margin-top: 10%;
+
+        font-size: 4rem;
     }
 
     #flyscape_grid {
@@ -701,12 +729,30 @@ a h3:hover {
     #flyscape_content {
         margin-top: 45vh;
 
+        width: 100vw;
+        height: auto;
+
         grid-template-columns: 1fr;
         grid-template-rows: auto auto 1fr;
         grid-template-areas:
         "p1"
         "i1"
         "p2";
+    }
+
+    #flyscape_content img {
+        margin: 0px;
+    }
+
+    #flyscape_part_1 {
+        text-align: center;
+    }
+
+    #flyscape_image_1 {
+        justify-self: center;
+        
+        height: 49.5vw;
+        width: 88vw;
     }
 
     #game_grid {
