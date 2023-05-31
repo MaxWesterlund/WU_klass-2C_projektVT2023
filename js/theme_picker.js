@@ -6,7 +6,8 @@ const dracula = {
     "text1":"rgb(248, 248, 242)",
     "textHighLight1":"rgb(189, 147, 249)",
     "accent1":"rgb(154, 252, 179)",
-    "accent1Transparent":"rgba(154, 252, 179, .2)"
+    "accent1Transparent":"rgba(154, 252, 179, .2)",
+    "accent2":"rgb(255, 121, 198)"
 }
 
 const palenight = {
@@ -17,7 +18,8 @@ const palenight = {
     "text1":"rgb(255, 255, 255)",
     "textHighLight1":"rgb(233, 128, 131)",
     "accent1":"rgb(255, 212, 126)",
-    "accent1Transparent":"rgba(255, 212, 126, .2)"
+    "accent1Transparent":"rgba(255, 212, 126, .2)",
+    "accent2":"rgb(147, 187, 255)"
 }
 
 if (document.getElementById("dracula_1") != null) {
@@ -46,6 +48,7 @@ function switchTheme(theme) {
     root.style.setProperty("--text-highlight-color-1", theme.textHighLight1);
     root.style.setProperty("--accent-color-1", theme.accent1);
     root.style.setProperty("--accent-color-1-transparent", theme.accent1Transparent);
+    root.style.setProperty("--accent-color-2", theme.accent2);
 
     saveTheme(theme);
 }

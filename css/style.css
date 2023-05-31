@@ -8,7 +8,8 @@
     --text-color-1:rgb(0, 0, 0);
     --text-highlight-color-1:rgb(0, 0, 0);
     --accent-color-1:rgb(0, 0, 0);
-    --accent-color-1-transparent:rgbax(0, 0, 0, 0);
+    --accent-color-1-transparent:rgba(0, 0, 0, 0);
+    --accent-color-2:rgb(0, 0, 0);
 
     --side-margin:50px;
     --top-margin:20px;
@@ -122,9 +123,21 @@ a h3:hover {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-areas: 
     "ti he"
+    "co co";
+}
+
+#start_content {
+    height: 100%;
+
+    grid-area: co;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
     ".  te"
     ".  th";
 }
@@ -133,10 +146,9 @@ a h3:hover {
     grid-area: te;
 
     justify-self: end;
-    margin: 30px;
-    margin-right: var(--side-margin);
-
-    width: 50%;
+    margin: var(--side-margin);
+    margin-top: var(--top-margin);
+    margin-bottom: 0px;
 
     display: flex;
     flex-direction: column;
@@ -148,8 +160,11 @@ a h3:hover {
 #theme_picker {
     grid-area: th;
 
-    margin: 30px;
-    margin-right: var(--side-margin);
+    align-self: end;
+
+    margin: var(--side-margin);
+    margin-top: var(--top-margin);
+    margin-bottom: var(--top-margin);
 
     display: flex;
     flex-direction: row;
@@ -181,6 +196,7 @@ a h3:hover {
 }
 /* #endregion */
 
+/* #region Games Page */
 #games_grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -199,7 +215,7 @@ a h3:hover {
     width: 100%;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr 1fr 2.5fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
     "g1 g2 g3 te"
@@ -228,8 +244,8 @@ a h3:hover {
     margin-left: var(--side-margin);
     margin-bottom: var(--top-margin);
 
-    width: 15vw;
-    height: 24vw;
+    width: 12vw;
+    height: 18vw;
 
     display: grid;
 
@@ -239,12 +255,28 @@ a h3:hover {
     "im";
 
     justify-content: center;
+
+    background-color: var(--main-color);
+
+    border-width: 3px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: var(--text-color-1);
 }
+.game:hover {
+    border-color: var(--text-highlight-color-1);
+}
+
 .game h3 {
     grid-area: ti;
 
+    margin: 10px;
+
     justify-self: start;
     align-self: start;
+}
+.game h3:hover {
+    color: var(--text-color-1);
 }
 .game img {
     width: 100%;
@@ -256,10 +288,9 @@ a h3:hover {
 
 .game div {
     grid-area: im;
-
-    transform: scale(0);
-    
+      
     align-self: end;
+    transform: scaleY(0);
 
     transition: 0.1s;
     background-color: var(--main-color-transparent);
@@ -269,7 +300,82 @@ a h3:hover {
 }
 
 .game:hover div {
-    transform: scale(1);
+    transform: scaleY(1);
+}
+/* #endregion */
+
+.project_background {
+    z-index: -1;
+    position: fixed;
+
+    justify-self: center;
+}
+
+#flyscape_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "ti he"
+    "co co";
+}
+
+#flyscape_content {
+    grid-area: co;
+
+    margin-top: 25vw;
+
+    width: 100vw;
+    height: 200vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    "p1 i1"
+    "p2 p2";
+
+    background-color: var(--background-color);
+}
+
+#flyscape_content div {
+    margin: var(--side-margin);
+}
+
+#flyscape_content img {
+    margin: var(--side-margin);
+}
+
+#flyscape_part_1 {
+    grid-area: p1;
+
+    justify-self: end;
+
+    margin-top: var(--top-margin);
+
+    width: 70%;
+
+    text-align: end;
+}
+
+#flyscape_image_1 {
+    grid-area: i1;
+
+    justify-self: start;
+
+    width: 32vw;
+    height: 18vw;
+
+    margin-top: var(--top-margin);
+}
+
+#flyscape_part_2 {
+    grid-area: p2;
+
+    justify-self: center;
+
+    width: 70%;
+
+    text-align: center;
 }
 
 #game_grid {
@@ -374,12 +480,16 @@ a h3:hover {
         font-size: 1.5rem;
     }
     p {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     /* #endregion */
     
     /* #region Header */
     #header img {
+        display: none;
+    }
+
+    .page_title {
         display: none;
     }
 
@@ -466,33 +576,35 @@ a h3:hover {
 
     /* #region Start Page */
     #start_grid {
-        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "co";
+    }
+
+    #start_content {
         width: 100vw;
 
         grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: auto auto;
         grid-template-areas: 
         "te"
         "th";
-        justify-items: center;
-        align-items: center;
-    }
-
-    .page_title {
-        display: none;
     }
 
     #start_text {
-        justify-self: auto;
-        margin: 0px;
-        margin-top: 30px;
+        justify-self: start;
 
-        width: 100vw;
+        margin: var(--side-margin);
+        margin-top: var(--top-margin);
+        margin-bottom: 0px;
+
         height: auto;
+        width: auto;
 
         text-align: center;
 
-        justify-content: center;
+        justify-content: start;
         align-items: center;
     }
     #start_text p {
@@ -506,10 +618,11 @@ a h3:hover {
         width: auto;
         height: auto;
 
-        justify-content: space-evenly;
+        justify-content: center;
     }
     /* #endregion */
 
+    /* #region Games Page */
     #games_grid {
         grid-template-columns: 100vw;
         grid-template-areas: 
@@ -543,7 +656,7 @@ a h3:hover {
     }
 
     .game {
-        margin: 0px;
+        margin: 10px;
         
         width: auto;
         height: auto;
@@ -557,20 +670,43 @@ a h3:hover {
     }
 
     .game img {
-        width: 50vw;
-        height: 80vw;
+        width: 40vw;
+        height: 60vw;
     }
 
     .game div {
         grid-area: de;
 
         transform: scale(1);
-        height: 80vw;
+        height: 60vw;
 
         display: block;
     }
     .game div p {
         margin: 10px;
+    }
+    /* #endregion */
+
+    .project_background {
+        height: 40vh;
+    }
+
+    #flyscape_grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "co";
+    }
+
+    #flyscape_content {
+        margin-top: 45vh;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+        "p1"
+        "i1"
+        "p2";
     }
 
     #game_grid {
