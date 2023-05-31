@@ -4,6 +4,7 @@ const dracula = {
     "mainTransparent":"rgba(40, 42, 54, .8)",
     "background":"rgb(68, 71, 90)",
     "text1":"rgb(248, 248, 242)",
+    "text2":"rgb(196, 196, 192)",
     "textHighLight1":"rgb(189, 147, 249)",
     "accent1":"rgb(154, 252, 179)",
     "accent1Transparent":"rgba(154, 252, 179, .2)",
@@ -16,6 +17,7 @@ const palenight = {
     "mainTransparent":"rgba(54, 60, 80, .8)",
     "background":"rgb(86, 85, 122)",
     "text1":"rgb(255, 255, 255)",
+    "text2":"rgb(204, 204, 204)",
     "textHighLight1":"rgb(233, 128, 131)",
     "accent1":"rgb(255, 212, 126)",
     "accent1Transparent":"rgba(255, 212, 126, .2)",
@@ -45,6 +47,7 @@ function switchTheme(theme) {
     root.style.setProperty("--main-color-transparent", theme.mainTransparent);
     root.style.setProperty("--background-color", theme.background);
     root.style.setProperty("--text-color-1", theme.text1);
+    root.style.setProperty("--text-color-2", theme.text2);
     root.style.setProperty("--text-highlight-color-1", theme.textHighLight1);
     root.style.setProperty("--accent-color-1", theme.accent1);
     root.style.setProperty("--accent-color-1-transparent", theme.accent1Transparent);
