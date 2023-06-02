@@ -26,9 +26,24 @@ const palenight = {
     "accent2":"rgb(147, 187, 255)"
 }
 
+const dark = {
+    "name":"dark",
+    "main":"rgb(14, 14, 18)",
+    "mainTransparent":"rgba(14, 14, 18, .8)",
+    "mainMoreTransparent":"rgba(14, 14, 18, .4)",
+    "background":"rgb(26, 26, 36)",
+    "text1":"rgb(230, 230, 236)",
+    "text2":"rgb(180, 180, 185)",
+    "textHighLight1":"rgb(128, 128, 164)",
+    "accent1":"rgb(83, 83, 115)",
+    "accent1Transparent":"rgba(83, 83, 115, .2)",
+    "accent2":"rgb(51, 51, 70)"
+}
+
 if (document.getElementById("dracula_1") != null) {
     initTheme(dracula);
     initTheme(palenight);
+    initTheme(dark);
 }
 
 switchTheme(loadTheme());

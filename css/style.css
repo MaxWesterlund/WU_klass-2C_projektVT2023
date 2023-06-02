@@ -26,6 +26,16 @@
 body {
     background-color: var(--background-color);
 }
+
+section {
+    height: fit-content;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background-color: var(--main-color-more-transparent);
+}
 /* #endregion */
 
 /* #region Text Styling */
@@ -77,6 +87,7 @@ a h3:hover {
 
     width: fit-content;
 
+    border-radius: 10px;
     background-color: var(--main-color-transparent);
 }
 
@@ -172,6 +183,10 @@ a h3:hover {
     transition: 0.1s;
 }
 
+#current_game h3 {
+    transition: 0.2s;
+}
+
 #current_game:hover img {
     border-width: 5px;
     border-radius: 5px;
@@ -192,8 +207,6 @@ a h3:hover {
     display: flex;
     flex-direction: column;
     justify-content: end;
-
-    text-align: end;
 }
 
 #theme_picker {
@@ -285,15 +298,10 @@ a h3:hover {
 
     width: 80%;
 }
-#games_text h2 {
-    text-align: end;
-}
-#games_text p {
-    text-align: end;
-}
 
 .game {
     margin: var(--side-margin);
+    margin-top: var(--top-margin);
     margin-right: 0px;
 
     width: 12vw;
@@ -409,13 +417,6 @@ a h3:hover {
     margin: var(--side-margin);
 
     width: 70%;
-    height: fit-content;
-
-    padding: 10px;
-
-    border-radius: 10px;
-
-    background-color: var(--main-color-more-transparent);
 }
 
 .project_content img {
@@ -579,6 +580,58 @@ a h3:hover {
 
 #contact_content {
     grid-area: co;
+
+    margin-top: var(--side-margin);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "p1 p2"
+    "p1 p3"
+    "p1 p4"
+    "p5 p5";
+}
+
+#contact_content h2 {
+    margin: var(--top-margin);
+}
+
+#contact_content section {
+    margin: var(--top-margin);
+}
+
+#contact_part_1 {
+    grid-area: p1;
+
+    justify-self: end;
+
+    width: 60%;
+}
+
+#contact_part_2 {
+    grid-area: p2;
+
+    width: fit-content;
+}
+
+#contact_part_3 {
+    grid-area: p3;
+
+    width: fit-content;
+}
+
+#contact_part_4 {
+    grid-area: p4;
+
+    width: fit-content
+}
+
+#contact_part_5 {
+    grid-area: p5;
+
+    justify-self: center;
+
+    width: 60%;
 }
 /* #endregion */
 
@@ -724,8 +777,6 @@ a h3:hover {
         height: auto;
         width: auto;
 
-        text-align: center;
-
         justify-content: start;
         align-items: center;
     }
@@ -736,11 +787,15 @@ a h3:hover {
     #theme_picker {
         justify-self: auto;
         margin: 0px;
+        margin-top: var(--top-margin);
 
         width: auto;
         height: auto;
 
-        justify-content: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+        "ti ti ti"
+        "t1 t2 t3";
     }
     /* #endregion */
 
@@ -768,13 +823,9 @@ a h3:hover {
         margin: var(--mobile-side-margin);
         margin-top: var(--top-margin);
 
+        width: 85%;
+
         justify-self: center;
-    }
-    #games_text h2 {
-        text-align: center;
-    }
-    #games_text p {
-        text-align: center;
     }
 
     .game {
@@ -949,6 +1000,28 @@ a h3:hover {
         margin-top: var(--top-margin);
 
         width: 90%;
+    }
+    /* #endregion */
+
+    /* #region Contact Page */
+    #contact_content {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "p1"
+        "p2"
+        "p3"
+        "p4"
+        "p5";
+    }
+    
+    #contact_part_1 {
+        justify-self: center;
+
+        width: 85%;
+    }
+    
+    #contact_part_5 {
+        width: 85%;
     }
     /* #endregion */
 }
