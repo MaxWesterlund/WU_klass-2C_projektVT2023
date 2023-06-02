@@ -4,6 +4,7 @@
 :root {
     --main-color:rgb(0, 0, 0);
     --main-color-transparent:rgba(0, 0, 0, 0);
+    --main-color-more-transparent:rgba(0, 0, 0, 0);
     --background-color:rgb(0, 0, 0);
     --text-color-1:rgb(0, 0, 0);
     --text-color-2:rgb(0, 0, 0);
@@ -143,7 +144,41 @@ a h3:hover {
     grid-template-rows: auto 1fr;
     grid-template-areas:
     ".  te"
-    ".  th";
+    "cu th";
+}
+
+#current_game {
+    grid-area: cu;
+
+    align-self: end;
+
+    margin: var(--side-margin);
+
+    width: fit-content;
+}
+
+#current_game img {
+    margin-top: var(--top-margin);
+
+    width: 90%;
+
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    border-color: var(--text-color-1);
+
+    display: flex;
+
+    transition: 0.1s;
+}
+
+#current_game:hover img {
+    border-width: 5px;
+    border-radius: 5px;
+}
+
+#current_game:hover h3 {
+    color: var(--text-color-1);
 }
 
 #start_text {
@@ -165,15 +200,25 @@ a h3:hover {
     grid-area: th;
 
     align-self: end;
+    justify-self: end;
 
     margin: var(--side-margin);
     margin-top: var(--top-margin);
     margin-bottom: var(--top-margin);
 
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "ti ti ti ti"
+    ".  t1 t2 t3";
     justify-content: end;
-    align-items: end;
+}
+
+#theme_picker h3 {
+    justify-self: center;
+
+    grid-area: ti;
 }
 
 .color_theme_button {
@@ -182,6 +227,9 @@ a h3:hover {
     border-radius: 100%;
     border-style: solid;
     border-color: var(--main-color);
+
+    width: 66px;
+    height: 66px;
 
     transform: rotate(-45deg);
 }
@@ -212,7 +260,7 @@ a h3:hover {
 #game_list {
     grid-area: ga;
 
-    justify-self: center;
+    justify-self: start;
 
     margin-top: var(--top-margin);
 
@@ -245,8 +293,8 @@ a h3:hover {
 }
 
 .game {
-    margin-left: var(--side-margin);
-    margin-bottom: var(--top-margin);
+    margin: var(--side-margin);
+    margin-right: 0px;
 
     width: 12vw;
     height: 18vw;
@@ -357,10 +405,17 @@ a h3:hover {
     background-color: var(--background-color);
 }
 
-.project_content div {
+.project_content section {
     margin: var(--side-margin);
 
     width: 70%;
+    height: fit-content;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background-color: var(--main-color-more-transparent);
 }
 
 .project_content img {
@@ -391,8 +446,6 @@ a h3:hover {
     grid-area: p1;
 
     justify-self: end;
-
-    text-align: end;
 }
 
 #flyscape_image_1 {
@@ -407,16 +460,12 @@ a h3:hover {
     grid-area: t1;
 
     justify-self: center;
-
-    text-align: center;
 }
 
 #flyscape_part_2 {
     grid-area: p2;
 
     justify-self: center;
-
-    text-align: center;
 }
 
 #flyscape_image_2 {
@@ -455,16 +504,12 @@ a h3:hover {
     grid-area: t2;
 
     justify-self: center;
-
-    text-align: center;
 }
 
 #flyscape_part_4 {
     grid-area: p4;
 
     justify-self: end;
-
-    text-align: end;
 }
 
 #flyscape_part_5 {
@@ -490,8 +535,6 @@ a h3:hover {
     grid-area: p1;
 
     justify-self: center;
-
-    text-align: center;
 }
 
 #maze_image_1 {
@@ -506,7 +549,6 @@ a h3:hover {
     grid-area: t1;
 
     justify-self: center;
-    text-align: center;
 }
 
 #maze_part_2 {
@@ -515,8 +557,6 @@ a h3:hover {
     justify-self: end;
 
     margin-top: 0px;
-
-    text-align: end;
 }
 
 #maze_image_2 {
@@ -525,6 +565,20 @@ a h3:hover {
     margin-top: 0px;
 
     width: 60%;
+}
+/* #endregion */
+
+/* #region Contact Page */
+#contact_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "ti he"
+    "co co";
+}
+
+#contact_content {
+    grid-area: co;
 }
 /* #endregion */
 
@@ -640,10 +694,24 @@ a h3:hover {
         width: 100vw;
 
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
         grid-template-areas: 
+        "cu"
         "te"
         "th";
+    }
+
+    #current_game {
+        justify-self: center;
+
+        justify-content: center;
+    }
+
+    #current_game h3 {
+        text-align: center;
+    }
+
+    #current_game img {
+        width: 100%;
     }
 
     #start_text {
@@ -770,7 +838,9 @@ a h3:hover {
         width: 100vw;
         height: auto;
     }
-    .project_content div {
+    .project_content section {
+        width: 95%;
+        
         margin: var(--mobile-side-margin);
     }
     .project_content img {
@@ -802,8 +872,6 @@ a h3:hover {
 
     #flyscape_part_1 {
         justify-self: center;
-
-        text-align: center;
     }
 
     #flyscape_image_1 {
@@ -826,8 +894,6 @@ a h3:hover {
     
     #flyscape_part_3 {
         justify-self: center;
-
-        text-align: center;
     }
     
     #flyscape_image_3 {
@@ -848,17 +914,12 @@ a h3:hover {
     
     #flyscape_part_4 {
         justify-self: center;
-
-        text-align: center;
     }
-    
+
     #flyscape_part_5 {
-
+        justify-self: center;
     }
     
-    #flyscape_part_6 {
-
-    }
     /* #endregion */
 
     /* #region Maze Page */
@@ -881,7 +942,6 @@ a h3:hover {
         margin-bottom: 0px;
 
         justify-self: center;
-        text-align: center;
     }
 
     #maze_image_2 {

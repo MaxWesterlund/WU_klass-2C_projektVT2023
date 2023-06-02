@@ -2,6 +2,7 @@ const dracula = {
     "name":"dracula",
     "main":"rgb(40, 42, 54)",
     "mainTransparent":"rgba(40, 42, 54, .8)",
+    "mainMoreTransparent":"rgba(40, 42, 54, .4)",
     "background":"rgb(68, 71, 90)",
     "text1":"rgb(248, 248, 242)",
     "text2":"rgb(196, 196, 192)",
@@ -15,6 +16,7 @@ const palenight = {
     "name":"palenight",
     "main":"rgb(54, 60, 80)",
     "mainTransparent":"rgba(54, 60, 80, .8)",
+    "mainMoreTransparent":"rgba(54, 60, 80, .4)",
     "background":"rgb(86, 85, 122)",
     "text1":"rgb(255, 255, 255)",
     "text2":"rgb(204, 204, 204)",
@@ -45,6 +47,7 @@ function switchTheme(theme) {
     var root = document.querySelector(":root");
     root.style.setProperty("--main-color", theme.main);
     root.style.setProperty("--main-color-transparent", theme.mainTransparent);
+    root.style.setProperty("--main-color-more-transparent", theme.mainMoreTransparent);
     root.style.setProperty("--background-color", theme.background);
     root.style.setProperty("--text-color-1", theme.text1);
     root.style.setProperty("--text-color-2", theme.text2);
